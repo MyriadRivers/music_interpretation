@@ -1,0 +1,4 @@
+/.vscode
+/.mp3
+pretrained_models/
+credentials.py
