@@ -4,6 +4,8 @@ from pathlib import Path
 from syrics.api import Spotify
 from credentials import cookie
 
+import color_generation
+
 # Track name with extension
 track = "no_culture.mp3"
 track_path = os.path.join("original_audio", track)
@@ -30,12 +32,30 @@ Path("features_files").mkdir(parents=True, exist_ok=True)
 # Write all features into a text file "[song_name].txt"
 with open( os.path.join("features_files", track_name + ".txt"), "w", encoding="utf-8") as features_file:
     
+    # TITLE
+    # TODO: Spotify API - Get Track
+    title = track_name
+    features_file.write("title," + title)
 
     # METER
-    # TODO: We'll print 4 for common time here as a placeholder, but eventually fetch this from thes Spotify API
+    # TODO: We'll print 4 for common time here as a placeholder, but eventually fetch this from the Spotify API - Get Audio Features
     meter = 4
     features_file.write("meter," + meter)
 
+    # DANCEABLILITY
+    danceability = 0.704
+    features_file.write("danceability," + danceability)
+
+    # ENERGY
+    energy = 0.89
+    features_file.write("energy," + energy)
+
+    # VALENCE
+    valence = 0.754
+    features_file.write("valence," + valence)
+
+    # HUE
+    features_file.write("hue," + color_generation.getBaseHue(valence, energy))
 
     # LYRICS EXTRACTION
     features_file.write("lyrics_start\n")
@@ -107,6 +127,3 @@ with open( os.path.join("features_files", track_name + ".txt"), "w", encoding="u
         
     #     # print("frames in entire song: " + str(len(y)))
     #     # print("frames in onset envelope: " + str(len(onset_strength_env)))
-        
-
-
