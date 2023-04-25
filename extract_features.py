@@ -1,25 +1,26 @@
+import argparse
 import librosa
 import os
 from pathlib import Path
 from syrics.api import Spotify
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-
 from credentials import cookie
 import color_generation
 
+arg_parser = argparse.ArgumentParser()
+arg_parser.add_argument("-p", "--path", type=str, help="path to the audio file")
+arg_parser.add_argument("-u", "--uri", type=str, help="spotify uri of the track")
+args = arg_parser.parse_args()
 
+uri = args.uri
+track_path = args.path
 
-# Track name with extension
-track = "Empire State of Mind.mp3"
-uri = "0jG6wsuGg5w1VFB1LSZgJB"
+# Set up connection to Spotify Web API
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+spotify_track = spotify.track(uri)
 
-track_path = os.path.join("original_audio", track)
-
-track_name = track.split(".")[0]
-# audio_directory = "separated_stems/"
-
-# stems_directory = audio_directory + track_name
+track_name = spotify_track['name']
 
 # set up lyrics connection to spotify
 # Get sp_dc cookie here to authenticate services 
@@ -27,27 +28,16 @@ sp_dc = cookie
 sp = Spotify(sp_dc)
 lyrics = sp.get_lyrics(uri)["lyrics"]["lines"]
 
-# Set up source separation
-# separator = Separator('spleeter:4stems')
-# separator.separate_to_file(track, stems_directory)
-
-# Set up connection to Spotify Web API
-spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
-
 # Make a directory for storing the features files of songs if it doesn't already exist
 Path("features_files").mkdir(parents=True, exist_ok=True)
 
 # Write all features into a text file "[song_name].txt"
 with open(os.path.join("features_files", track_name + ".txt"), "w", encoding="utf-8") as features_file:
     
-    spotify_track = spotify.track(uri)
-    features = spotify.audio_features(uri)
-
-    print(str(features))
+    features = spotify.audio_features(uri)[0]
     
     # TITLE
-    title = spotify_track['name']
-    features_file.write("title," + title + "\n")
+    features_file.write("title," + track_name + "\n")
 
     # TEMPO
     tempo = features['tempo']
@@ -58,20 +48,20 @@ with open(os.path.join("features_files", track_name + ".txt"), "w", encoding="ut
     features_file.write("meter," + str(meter) + "\n")
 
     # Duration in seconds
-    duration = features['duration']
+    duration = features['duration_ms']
     features_file.write("duration," + str(duration / 1000) + "\n")
 
     # DANCEABLILITY
-    danceability = format(features['danceability'], '.3f')
-    features_file.write("danceability," + str(danceability) + "\n")
+    danceability = features['danceability']
+    features_file.write("danceability," + format(danceability, '.3f') + "\n")
 
     # ENERGY
-    energy = format(features['energy'], '.3f')
-    features_file.write("energy," + str(energy) + "\n")
+    energy = features['energy']
+    features_file.write("energy," + format(energy, '.3f') + "\n")
 
     # VALENCE
-    valence = format(features['valence'], '.3f')
-    features_file.write("valence," + str(valence) + "\n")
+    valence = features['valence']
+    features_file.write("valence," + format(valence, '.3f') + "\n")
 
     # HUE
     features_file.write("hue," + str(color_generation.getBaseHue(valence, energy)[0]) + "\n")
@@ -113,36 +103,3 @@ with open(os.path.join("features_files", track_name + ".txt"), "w", encoding="ut
     for i in range(rms.size):
         features_file.write(str(rms_times[i]) + ',' + "{:.8f}".format(rms[0, i] / max_rms) + '\n')
     features_file.write("energy_end\n")
-
-    # # Load the individual stems for feature extraction
-    # for stem in os.listdir(stems_directory):
-    #     file_name = os.path.join(stems_directory, stem)
-        
-    #     features_file.write(stem.split(".")[0] + "\n")
-        
-    #     y, sr = librosa.load(file_name)
-
-    #     print("frames in entire song: " + str(len(y)))
-        
-    #     onset_strength_env = librosa.onset.onset_strength(y=y, sr=sr)
-
-    #     print("frames in onset envelope: " + str(len(onset_strength_env)))
-
-
-    #     # times = librosa.times_like(onset_strength_env, sr=sr)
-    #     # onset_frames = librosa.onset.onset_detect(onset_envelope=onset_strength_env, sr=sr)
-    #     # onset_times = librosa.frames_to_time(onset_frames, sr=sr)
-
-    #     # strengths_to_times = {time: strength for time, strength in zip(times, onset_strength_env)}
-    #     # # times are the times corresponding to every frame of the onset strength envelope
-    #     # # onset_frames are the specific frames of the onset in the context of the entire track
-    #     # onset_strengths = [strengths_to_times[on_time] for on_time in times[onset_frames]]
-
-    #     # features_file.write("Onsets:")
-    #     # features_file.write(str(onset_times) + "\n")
-
-    #     # features_file.write("Onsets Strengths:")
-    #     # features_file.write(str(onset_strengths) + "\n")
-        
-    #     # print("frames in entire song: " + str(len(y)))
-    #     # print("frames in onset envelope: " + str(len(onset_strength_env)))
