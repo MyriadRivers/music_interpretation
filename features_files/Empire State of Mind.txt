@@ -1,71 +1,100 @@
-title,No Culture
-tempo,127.003
+title,Empire State Of Mind
+tempo,173.585
 meter,4
-duration,216.253
-danceability,0.704
-energy,0.89
-valence,0.754
-hue,49.80000000000001
+duration,276.92
+danceability,0.491
+energy,0.956
+valence,0.811
+hue,37.920
 lyrics_start
-10.86,Hey, alright!
-18.24,Hey, alright!
-19.58,I am a vulture, I fly-y-y-y-y
-23.16,I make a circle above your culture
-26.4,I got no culture of mine
-28.82,I am piranha, I bi-i-i-ite
-32.58,I make a supper outta your culture
-35.83,I got no culture
-37.59,And I'm like a kid in a candy store
-41.56,Taking all the taffy that I don't ask for, yeah
-45.23,I'm like a bull in a china shop
-49.18,Knocking off a knock-off
-50.68,'Cause, I got no culture
-52.85,I got no culture of mine
-56.06,So, can we let sleeping dogs lie?
-60.37,'Cause, everyone believes me when I say it's mine
-63.65,And a little wool over the eyes
-67.87,'Cause, everyone believes me when I
-70.42,I want to love ya, I want to make ya mi-ine
-73.99,We make a child outta your culture
-77.34,It got no culture
-79.06,And I'm like a kid in a candy store
-82.94,Taking all the taffy that I don't ask for, yeah
-86.88,I'm like a bull in a china shop
-90.54,Knocking off a knock-off
-92.32,'Cause, I got no culture
-94.34,I got no culture of mine
-97.61,So, can we let sleeping dogs lie?
-101.98,'Cause, everyone believes me when I say it's mine
-105.27,And a little wool over the eyes
-109.53,'Cause, everyone believes me when I say it's fine
-113.14,Can we let sleeping dogs lie?
-116.93,'Cause, everyone believes me when I
-119.61,(No culture, I got no culture)
-123.5,(No culture, I got no culture)
-127.22,No culture, I got no culture
-130.94,No culture, I got no culture
-134.27,I'm like a kid in a candy store (no culture, I got no culture)
-137.76,Taking all the taffy that I don't ask for, yeah (no culture, I got no culture)
-141.93,I'm like a bull in a china shop (no culture, I got no culture)
-145.23,Knocking off a knock-off (no culture)
-146.99,'Cause, I got no culture
-149.29,I got no culture
-151.01,I got no culture of mine
-158.04,So, can we let sleeping dogs lie?
-162.56,'Cause, everyone believes me when I say it's mine
-165.67,And a little wool over the eyes
-170.09,'Cause, everyone believes me when I say it's fine
-172.73,(No culture,I got no culture) Can we let sleeping dogs lie?
-176.49,(No culture, I got no culture) 'Cause, everyone believes me when it's mine
-180.38,(No culture, I got no culture) A little wool over the eyes
-183.97,(No culture, I got no culture) 'Cause, everyone believes me when I
-187.94,No culture, I got no culture (ah-ah-ah)
-191.64,No culture, I got no culture (ah)
-195.34,No culture, I got no culture (ah-ah-ah)
-199.08,No culture, I got no culture (ah)
-202.96,No culture, I got no culture (ah-ah)
-206.89,No culture, I got no culture
-210.28,
+9.3,Yeah!
+10.46,Yeah, I'm out that Brooklyn, now I'm down in Tribeca
+13.37,Right next to De Niro, but I'll be hood forever
+16.01,I'm the new Sinatra, and since I made it here
+18.88,I can make it anywhere, yeah, they love me everywhere
+21.25,I used to cop in Harlem, hola, my Dominicanos (Dimelo!)
+24.21,Right there up on Broadway, brought me back to that McDonald's
+26.83,Took it to my stash spot, 560 State Street
+29.61,Catch me in the kitchen, like a Simmons whippin' pastry
+32.67,Cruisin' down 8th Street, off-white Lexus
+35.39,Drivin' so slow, but BK is from Texas
+38.09,Me? I'm out that Bed-Stuy, home of that boy Biggie
+40.99,Now I live on Billboard and I brought my boys with me
+43.62,Say what up to Ty Ty, still sippin' Mai Tais
+46.33,Sittin' courtside, Knicks and Nets give me high-fives
+49.18,Nigga, I be spiked out, I could trip a referee
+51.95,Tell by my attitude that I'm most definitely from
+54.94,In New York (ayy, aha) (uh, yeah)
+58.1,Concrete jungle (yeah) where dreams are made of
+61.79,There's nothin' you can't do (yeah) (okay)
+64.92,Now you're in New York (aha, aha, aha) (uh, yeah)
+69.48,These streets will make you feel brand-new (new)
+73.05,Big lights will inspire you (come on) (okay)
+75.72,Let's hear it for New York (you welcome, OG) (uh)
+78.52,New York (yeah), New York (uh) (I made you hot, nigga)
+82.32,Catch me at the X with OG at a Yankee game
+85.19,Shit, I made the Yankee hat more famous than a Yankee can
+87.97,You should know I bleed blue, but I ain't a Crip though
+90.85,But I got a gang of niggas walkin' with my clique though
+93.44,Welcome to the meltin' pot, corners where we sellin' rock
+96.11,Afrika Bambaataa shit, home of the hip-hop
+98.85,Yellow cab, gypsy cab, dollar cab, holla back
+101.5,For foreigners, it ain't fair, they act like they forgot how to add
+104.58,Eight million stories out there in the naked
+107.26,City, it's a pity half of y'all won't make it
+109.98,Me? I gotta plug Special Ed, "I Got It Made"
+112.44,If Jeezy's payin' LeBron, I'm payin' Dwyane Wade
+115.68,Three dice cee-lo, three-card Marley
+118.12,Labor Day Parade, rest in peace, Bob Marley
+121.25,Statue of Liberty, long live the World Trade
+123.96,Long live the king, yo, I'm from the Empire State, that's
+126.81,In New York (ayy) (uh, yeah)
+130.16,Concrete jungle where dreams are made of
+134.05,There's nothin' you can't do (that boy good) (okay)
+136.94,Now you're in New York (welcome to the bright lights, baby) (uh, yeah)
+141.58,These streets will make you feel brand-new
+145.14,Big lights will inspire you (okay)
+147.89,Let's hear it for New York (uh)
+150.52,New York (yeah), New York (uh)
+155.04,Lights is blinding, girls need blinders
+157.68,So they can step out of bounds quick, the side lines is
+160.75,Lined with casualties who sip the life casually
+162.93,Then gradually become worse, don't bite the apple, Eve
+166.23,Caught up in the in-crowd, now you're in-style
+168.68,Into the winter gets cold, en vogue with your skin out
+171.55,City of sin is a pity on a whim
+174.05,Good girls gone bad, the city's filled with them
+177.27,Mami, took a bus trip, now she got her bust out
+179.92,Everybody ride her, just like a bus route
+183.11,"Hail Mary" to the city, you're a virgin
+185.41,And Jesus can't save you, life starts when the church end
+188.24,Came here for school, graduated to the high life
+191.06,Ball players, rap stars, addicted to the limelight
+194.02,MDMA got you feelin' like a champion
+196.42,The city never sleeps, better slip you a Ambien
+198.53,In New York (ayy, ow) (uh, yeah)
+202.11,Concrete jungle where dreams are made of
+205.97,There's nothin' you can't do (okay)
+208.82,Now you're in New York (uh, yeah)
+212.73,These streets will make you feel brand-new
+217.13,Big lights will inspire you (okay)
+219.88,Let's hear it for New York (uh)
+222.65,New York (yeah), New York (uh)
+227.39,One hand in the air for the big city (oh)
+230.14,Streetlights, big dreams, all lookin' pretty (oh)
+233.09,No place in the world that could compare (nah)
+235.67,Put your lighters in the air, everybody say
+238.08,"Yeah, yeah" (come on, come on)
+240.78,"Yeah, yeah" (come on)
+243.1,In New York (uh, yeah)
+246.23,Concrete jungle where dreams are made of
+250.27,There's nothin' you can't do (okay)
+253.26,Now you're in New York (uh, yeah)
+257.76,These streets will make you feel brand-new
+261.21,Big lights will inspire you (okay)
+264.14,Let's hear it for New York (uh)
+266.82,New York (yeah), New York (uh)
+269.54,
 lyrics_end
 beats_start
 0.18575963718820862

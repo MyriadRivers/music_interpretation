@@ -64,7 +64,8 @@ with open(os.path.join("features_files", track_name + ".txt"), "w", encoding="ut
     features_file.write("valence," + format(valence, '.3f') + "\n")
 
     # HUE
-    features_file.write("hue," + str(color_generation.getBaseHue(valence, energy)[0]) + "\n")
+    hue = color_generation.getBaseHue(valence, energy)[0]
+    features_file.write("hue," + format(hue, '.3f') + "\n")
 
     # LYRICS EXTRACTION
     features_file.write("lyrics_start\n")

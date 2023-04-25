@@ -5,7 +5,7 @@ duration,235.213
 danceability,0.727
 energy,0.974
 valence,0.965
-hue,34.680000000000035
+hue,34.680
 lyrics_start
 0.07,One, two, three, uh!
 1.41,My baby don't mess around

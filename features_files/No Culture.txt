@@ -3,9 +3,9 @@ tempo,127.003
 meter,4
 duration,216.253
 danceability,0.704
-energy,0.89
+energy,0.890
 valence,0.754
-hue,49.80000000000001
+hue,49.800
 lyrics_start
 10.86,Hey, alright!
 18.24,Hey, alright!
