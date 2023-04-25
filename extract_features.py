@@ -2,14 +2,19 @@ import librosa
 import os
 from pathlib import Path
 from syrics.api import Spotify
-from credentials import cookie
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
 
+from credentials import cookie
 import color_generation
 
+
+
 # Track name with extension
-track = "no_culture.mp3"
+track = "Empire State of Mind.mp3"
+uri = "0jG6wsuGg5w1VFB1LSZgJB"
+
 track_path = os.path.join("original_audio", track)
-spotify_track_id = "0jG6wsuGg5w1VFB1LSZgJB"
 
 track_name = track.split(".")[0]
 # audio_directory = "separated_stems/"
@@ -20,46 +25,56 @@ track_name = track.split(".")[0]
 # Get sp_dc cookie here to authenticate services 
 sp_dc = cookie
 sp = Spotify(sp_dc)
-lyrics = sp.get_lyrics(spotify_track_id)["lyrics"]["lines"]
+lyrics = sp.get_lyrics(uri)["lyrics"]["lines"]
 
 # Set up source separation
 # separator = Separator('spleeter:4stems')
 # separator.separate_to_file(track, stems_directory)
 
+# Set up connection to Spotify Web API
+spotify = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+
 # Make a directory for storing the features files of songs if it doesn't already exist
 Path("features_files").mkdir(parents=True, exist_ok=True)
 
 # Write all features into a text file "[song_name].txt"
-with open( os.path.join("features_files", track_name + ".txt"), "w", encoding="utf-8") as features_file:
+with open(os.path.join("features_files", track_name + ".txt"), "w", encoding="utf-8") as features_file:
+    
+    spotify_track = spotify.track(uri)
+    features = spotify.audio_features(uri)
+
+    print(str(features))
     
     # TITLE
-    # TODO: Spotify API - Get Track
-    title = track_name
-    features_file.write("title," + title)
+    title = spotify_track['name']
+    features_file.write("title," + title + "\n")
 
     # TEMPO
-    tempo = 127.003
-    features_file.write("tempo," + tempo)
+    tempo = features['tempo']
+    features_file.write("tempo," + str(tempo) + "\n")
 
     # METER
-    # TODO: We'll print 4 for common time here as a placeholder, but eventually fetch this from the Spotify API - Get Audio Features
-    meter = 4
-    features_file.write("meter," + meter)
+    meter = features['time_signature']
+    features_file.write("meter," + str(meter) + "\n")
+
+    # Duration in seconds
+    duration = features['duration']
+    features_file.write("duration," + str(duration / 1000) + "\n")
 
     # DANCEABLILITY
-    danceability = 0.704
-    features_file.write("danceability," + danceability)
+    danceability = format(features['danceability'], '.3f')
+    features_file.write("danceability," + str(danceability) + "\n")
 
     # ENERGY
-    energy = 0.89
-    features_file.write("energy," + energy)
+    energy = format(features['energy'], '.3f')
+    features_file.write("energy," + str(energy) + "\n")
 
     # VALENCE
-    valence = 0.754
-    features_file.write("valence," + valence)
+    valence = format(features['valence'], '.3f')
+    features_file.write("valence," + str(valence) + "\n")
 
     # HUE
-    features_file.write("hue," + color_generation.getBaseHue(valence, energy))
+    features_file.write("hue," + str(color_generation.getBaseHue(valence, energy)[0]) + "\n")
 
     # LYRICS EXTRACTION
     features_file.write("lyrics_start\n")

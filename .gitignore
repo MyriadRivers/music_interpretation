@@ -5,3 +5,4 @@ __pycache__/
 separated_stems/audio_output/
 pretrained_models/
 credentials.py
+.cache
