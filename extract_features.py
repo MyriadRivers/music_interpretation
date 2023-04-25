@@ -12,9 +12,9 @@ track_path = os.path.join("original_audio", track)
 spotify_track_id = "0jG6wsuGg5w1VFB1LSZgJB"
 
 track_name = track.split(".")[0]
-audio_directory = "separated_stems/"
+# audio_directory = "separated_stems/"
 
-stems_directory = audio_directory + track_name
+# stems_directory = audio_directory + track_name
 
 # set up lyrics connection to spotify
 # Get sp_dc cookie here to authenticate services 
@@ -36,6 +36,10 @@ with open( os.path.join("features_files", track_name + ".txt"), "w", encoding="u
     # TODO: Spotify API - Get Track
     title = track_name
     features_file.write("title," + title)
+
+    # TEMPO
+    tempo = 127.003
+    features_file.write("tempo," + tempo)
 
     # METER
     # TODO: We'll print 4 for common time here as a placeholder, but eventually fetch this from the Spotify API - Get Audio Features
